@@ -22,3 +22,42 @@ Features:
     - A clear menu system
     - Simple command line interface
     - Session based account storage
+
+
+
+Usage:
+
+1. Run the compile program
+2. Follow the prompts on the screen
+   - 'C' to create a new account
+   - 'L' to log in
+   - 'Q' to quit
+3. Once logged in you can do the following
+   - 'D' to deposit money
+   - 'W' to withdraw money
+   - 'R' to request balance
+   - 'Q' to logout
+  
+Implementation Details:
+
+* Uses vectors for dynamic account storage
+* Indentifies account state by using index tracking
+* Implements basic error checks:
+   - Duplicate user ID check
+   - Invalid ammount check
+   - Insufficient funds check
+   - Login Validation
+
+
+Future Improvements:
+
+* Add persistance to the user accounts created ( save the accounts )
+* Implement a transaction history
+* Add password encryption
+* Add functionality for deleting accounts.
+
+
+
+
+
+
