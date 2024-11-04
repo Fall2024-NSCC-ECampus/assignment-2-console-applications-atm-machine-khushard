@@ -1,0 +1,3 @@
+C:/Users/kevin/OneDrive - Nova Scotia Community College/1 - YEAR 2/C++ Class/assignment-2-console-applications-atm-machine-khushard/cmake-build-debug/CMakeFiles/assignment_2_console_applications_atm_machine_khushard.dir
+C:/Users/kevin/OneDrive - Nova Scotia Community College/1 - YEAR 2/C++ Class/assignment-2-console-applications-atm-machine-khushard/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kevin/OneDrive - Nova Scotia Community College/1 - YEAR 2/C++ Class/assignment-2-console-applications-atm-machine-khushard/cmake-build-debug/CMakeFiles/rebuild_cache.dir

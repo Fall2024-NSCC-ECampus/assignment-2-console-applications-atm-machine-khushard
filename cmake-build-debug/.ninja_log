@@ -1,0 +1,8 @@
+# ninja log v5
+0	526	7515645691732748	CMakeFiles/assignment_2_console_applications_atm_machine_khushard.dir/main.cpp.obj	dcb93510252d433f
+7	715	7515645693578520	CMakeFiles/assignment_2_console_applications_atm_machine_khushard.dir/ATM.cpp.obj	6966a2cba4b62223
+715	986	7515645696298914	assignment_2_console_applications_atm_machine_khushard.exe	5c7810478ddc04
+4	1567	7524413456310134	CMakeFiles/assignment_2_console_applications_atm_machine_khushard.dir/ATM.cpp.obj	6966a2cba4b62223
+1568	1905	7524413459689017	assignment_2_console_applications_atm_machine_khushard.exe	5c7810478ddc04
+4	579	7524418192032648	CMakeFiles/assignment_2_console_applications_atm_machine_khushard.dir/ATM.cpp.obj	6966a2cba4b62223
+580	755	7524418193802068	assignment_2_console_applications_atm_machine_khushard.exe	5c7810478ddc04

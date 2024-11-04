@@ -32,44 +32,55 @@ void ATM::start() {
     char choice;
 
     while (true) {
-        if (currentAccountIndex == -1) { // So, if currentAccountIndex is -1, no user is logged in and we show intro menu
-            printIntroMenu();
-            cin >> choice;
+        try {
+            if (currentAccountIndex ==
+                -1) { // So, if currentAccountIndex is -1, no user is logged in and we show intro menu
+                printIntroMenu();
+                cin >> choice;
 
-            switch (choice) {
-                case 'l':
-                    login();
-                    break;
-                case 'c':
-                    createAccount();
-                    break;
-                case 'q':
-                    cout << "Thanks for stopping by!";
-                    return;
+                switch (choice) {
+                    case 'l':
+                        login();
+                        break;
+                    case 'c':
+                        createAccount();
+                        break;
+                    case 'q':
+                        cout << "Thanks for stopping by!";
+                        return;
+                    default:
+                        throw runtime_error("Please enter l, c, or q!");
+                }
+
             }
 
-        }
-        // If index isnt -1, we print main menu as someone is logged in.
-        else {
-            printMainMenu();
-            cin >> choice;
+                // If index isn't -1, we print main menu as someone is logged in.
+            else {
+                printMainMenu();
+                cin >> choice;
 
-            // Switch case calling methods to do operations
-            switch (choice) {
-                case 'd':
-                    deposit();
-                    break;
-                case 'w':
-                    withdraw();
-                    break;
-                case 'r':
-                    requestBalance();
-                    break;
-                case 'q':
-                    currentAccountIndex = -1;
-                    cout << "Logged out successfully!" << endl;
-                    break;
+                // Switch case calling methods to do operations
+                switch (choice) {
+                    case 'd':
+                        deposit();
+                        break;
+                    case 'w':
+                        withdraw();
+                        break;
+                    case 'r':
+                        requestBalance();
+                        break;
+                    case 'q':
+                        currentAccountIndex = -1;
+                        cout << "Logged out successfully!" << endl;
+                        break;
+                    default:
+                        throw runtime_error("Please enter d, w, r, or q!");
+                }
             }
+        } catch(runtime_error& e) {
+            cout << "Error: " <<e.what() <<endl;
+            cin.clear();
         }
     }
 }
@@ -126,15 +137,20 @@ void ATM::deposit() {
     if (currentAccountIndex == -1)
         return;
 
-    double amount;
-    cout << "Amount of deposit: $" ;
-    cin >> amount;
+    try {
+        double amount;
+        cout << "Amount of deposit: $";
+        cin >> amount;
 
-    //Verifies the amount is positive before adding to balance.
-    if (amount > 0) {
-        accounts[currentAccountIndex].balance += amount;
-    } else {
-        cout << "Invalid amount!" <<endl;
+        //Verifies the amount is positive before adding to balance.
+        if (amount > 0) {
+            accounts[currentAccountIndex].balance += amount;
+        } else {
+            throw runtime_error("Invalid amount!");
+        }
+    } catch(runtime_error& e) {
+        cout << e.what() <<endl;
+        cin.clear();
     }
 
 }
@@ -144,17 +160,21 @@ void ATM::withdraw() {
     if (currentAccountIndex == -1)
         return;
 
-    double amount;
-    cout <<"Amount of withdrawal: $";
-    cin >> amount;
+    try {
+        double amount;
+        cout << "Amount of withdrawal: $";
+        cin >> amount;
 
-    //Verifies amount is greater than 0 but less than or equal to balance.
-    if (amount > 0 && amount <= accounts[currentAccountIndex].balance){
-        accounts[currentAccountIndex].balance -= amount;
-    } else {
-        cout << "Invalid amount of insufficient funds!" << endl;
+        //Verifies amount is greater than 0 but less than or equal to balance.
+        if (amount > 0 && amount <= accounts[currentAccountIndex].balance) {
+            accounts[currentAccountIndex].balance -= amount;
+        } else {
+            throw runtime_error("Invalid amount!");
+        }
+    } catch(runtime_error& e) {
+        cout << e.what() << endl;
+        cin.clear();
     }
-
 }
 
 void ATM::requestBalance() {
